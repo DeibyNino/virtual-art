@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Pagina no encontrada">
+  <div class="flex flex-col items-center justify-center h-screen main-404">
+    <h1 class="text-4xl font-bold">404</h1>
+    <p class="text-lg">Pagina no encontrada</p>
+    <a href="/" class="text-white px-4 py-2 rounded-lg mt-4">Volver al inicio</a
+    >
+  </div>
+</Layout>
+
+<style>
+  .main-404 {
+    background-image: url(../assets/images/pagenotfound.jpg);
+    background-color: rgba(6, 10, 108, 0.44);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    color: white;
+  }
+</style>

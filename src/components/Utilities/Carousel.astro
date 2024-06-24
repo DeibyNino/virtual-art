@@ -1,0 +1,103 @@
+---
+import imagen1 from "@/assets/images/obras/dog.webp";
+import imagen2 from "@/assets/images/obras/girl.jpg";
+import imagen3 from "@/assets/images/obras/girl2.jpg";
+import imagen4 from "@/assets/images/obras/lio2.webp";
+import imagen5 from "@/assets/images/obras/lion.jpg";
+import imagen6 from "@/assets/images/obras/muisca.jpg";
+import imagen7 from "@/assets/images/obras/snow.jpg";
+import imagen8 from "@/assets/images/obras/velo2.webp";
+import { Image } from "astro:assets";
+import CarouselItem from "./CarouselItem.astro";
+---
+
+<div class="slider">
+  <div class="slide-track">
+    <div class="slide">
+      <Image src={imagen1} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen2} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen3} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen4} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen5} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen6} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen7} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen8} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen2} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen3} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen4} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen5} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen6} alt="imagen1" />
+    </div>
+    <div class="slide">
+      <Image src={imagen7} alt="imagen1" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .slider {
+    width: 75vw;
+    overflow: hidden;
+    margin: auto;
+    height: auto;
+  }
+
+  .slider .slide-track {
+    display: flex;
+    gap: 4rem;
+    animation: scroll 40s linear infinite;
+    --webkit-animation: scroll 60s linear infinite;
+    width: calc(400px * 14);
+  }
+
+  .slider .slide {
+    width: 400px;
+  }
+
+  .slider .slide img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .slider .slide img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    100% {
+      -webkit-transform: translateX(calc(-400px * 7));
+      transform: translateX(calc(-400px * 7));
+    }
+  }
+</style>

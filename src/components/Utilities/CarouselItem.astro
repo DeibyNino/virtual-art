@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  imagen1: ImageMetadata;
+}
+
+const { imagen1 } = Astro.props;
+---
+
+<div class="slide">
+  <Image src={imagen1} alt="imagen1" />
+</div>

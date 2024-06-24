@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import velo from '../../assets/images/velo.jpg'
+---
+
+<div class="h-screen grid grid-cols-1 lg:grid-cols-2">
+    <div class="h-[50vh] lg:h-[90vh] flex items-center overflow-hidden  relative ">
+<Image src={velo} alt="Vélo" class="object-contain w-full "  />
+
+<div class="absolute  right-1 transform -translate-x-1/2 bottom-5 text-white text-xs font-bold">
+    <h2 >Titulo de la obra: El Vélo Rojo</h2>
+    <h2 >Autor: Roy Marquez</h2>
+</div>
+</div>
+    <div class="text-white flex flex-col justify-center p-4 gap-4  lg:p-8 xl:p-12  ">
+        <h2 class="text-4xl lg:text-7xl font-bold">Son los sueños los que se plasman en lienzo</h2>
+        <p class="text-xl">En <span class="font-bold">Virtual Art</span> realizamos obras bajo pedido, si tienes una idea en mente, no dudes, estaremos encantados de inmortalizarla en un lienzo.
+        
+        </p>
+    </div>
+</div>

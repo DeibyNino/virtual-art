@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const services = [
+  {
+    title: "Pintura de Murales",
+    copy: "Transforma tus espacios con murales únicos y personalizados.",
+    description:
+      "Ofrecemos servicios de pintura mural para hogares, negocios y espacios públicos. Cada mural es diseñado para capturar la esencia del espacio y las preferencias del cliente, convirtiendo cualquier superficie en una obra de arte vibrante y significativa.",
+    image: "https://via.placeholder.com/600x400",
+  },
+  {
+    title: "Pintura al Óleo sobre Lienzo",
+    copy: "Obras al óleo sobre lienzo que capturan la belleza del realismo.",
+    description:
+      "Especializamos en la creación de pinturas al óleo sobre lienzo, utilizando técnicas tradicionales y modernas para lograr un realismo impresionante. Cada pieza es una manifestación de detalle, profundidad y emoción, perfecta para coleccionistas y amantes del arte.",
+    image: "https://via.placeholder.com/600x400",
+  },
+  {
+    title: "Venta y Subastas de Arte",
+    copy: "Adquiere obras de arte únicas y exclusivas a través de nuestras ventas y subastas.",
+    description:
+      "Participa en nuestras ventas y subastas de arte para obtener piezas únicas y exclusivas. Ofrecemos una amplia variedad de obras que reflejan diferentes estilos y técnicas, brindando a los compradores la oportunidad de poseer arte original y significativo.",
+    image: "https://via.placeholder.com/600x400",
+  },
+  {
+    title: "Cursos de Pintura para Principiantes y Avanzados",
+    copy: "Aprende y perfecciona tu arte con nuestros cursos de pintura para todos los niveles.",
+    description:
+      "Nuestros cursos de pintura están diseñados para artistas de todos los niveles, desde principiantes hasta avanzados. Aprenderás diversas técnicas, incluyendo óleo, acuarela, acrílico y carboncillo, en un ambiente inspirador y de apoyo. Desarrolla tu creatividad y mejora tus habilidades con la guía de un artista experimentado.",
+    image: "https://via.placeholder.com/600x400",
+  },
+  {
+    title: "Eventos y Exposiciones de Arte",
+    copy: "Sumérgete en el mundo del arte a través de nuestros eventos y exposiciones.",
+    description:
+      "Organizamos eventos y exposiciones de arte que ofrecen una plataforma para mostrar y celebrar la creatividad. Estos eventos no solo exhiben nuestras obras, sino que también proporcionan un espacio para interactuar con otros entusiastas del arte y compartir la pasión por la creación artística.",
+    image: "https://via.placeholder.com/600x400",
+  },
+  {
+    title: "Elaboración de Bastidores, Lienzos y Caballetes",
+    copy: "Materiales artísticos de alta calidad hechos a mano para artistas exigentes.",
+    description:
+      "Proveemos bastidores, lienzos y caballetes hechos a mano, utilizando materiales de la más alta calidad. Cada producto es diseñado para satisfacer las necesidades de artistas profesionales y aficionados, garantizando durabilidad y un rendimiento superior.",
+    image: "https://via.placeholder.com/600x400",
+  },
+];
+---
+
+<Layout title="Servicios">
+  <div class="h-20 lg:h-28"></div>
+  <!-- <div class="h-screen">
+    <div >
+        <h1 class="">"Descubre Nuestros Servicios Artísticos."</h1>
+        </div>
+        </div> -->
+  <body class="bg-gray-100 text-gray-800 p-8">
+    <header
+      class="text-white flex items-center justify-center h-[50vh] lg:h-[90vh] hero-header"
+    >
+      <div class="container mx-auto text-center flex flex-col">
+        <h1 class="text-3xl font-bold">
+          Descubre Nuestros Servicios Artísticos
+        </h1>
+        <a
+          href="#services"
+          class="bg-blue-950 text-white py-2 px-6 rounded-lg mt-6 w-40 mx-auto"
+        >
+          Ver Servicios
+        </a>
+      </div>
+    </header>
+    <div class="h-20 lg:h-28" id="services"></div>
+
+    <section class="container mx-auto py-8">
+      {
+        services.map((service) => (
+          <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <div class="md:flex">
+              <img
+                class="md:w-1/2 rounded-lg object-cover"
+                src={service.image}
+                alt={service.title}
+              />
+              <div class="md:ml-6 md:w-1/2 flex flex-col">
+                <h2 class="text-2xl lg:text-4xl text-blue-950  font-bold mb-4">
+                  {service.title}
+                </h2>
+                <p class="text-xl font-semibold  mb-4">{service.copy}</p>
+                <p>{service.description}</p>
+                <a
+                  href="/"
+                  class="w-full lg:w-40 text-center bg-blue-950 text-white py-2 px-6 rounded-lg  mt-6 "
+                >
+                  Contactar
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </body>
+</Layout>
+
+<!-- crear un efecto scroll suave en la página de servicios  -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+
+  // document?.querySelector("button")?.addEventListener("click", function () {
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  // });
+</script>
+
+<style>
+  .hero-header {
+    background-image: url("../assets/images/serviceshero.jpg");
+    background-color: rgba(0, 0, 0, 0.482);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+  }
+</style>

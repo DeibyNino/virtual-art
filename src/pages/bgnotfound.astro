@@ -1,0 +1,32 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import bg404 from "@/assets/images/404.jpg";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Page not found">
+  <div
+    class="relative flex flex-col items-center justify-center h-screen main-404"
+  >
+    <div class="relative">
+      <h1 class="text-4xl font-bold">404</h1>
+      <p class="text-lg">Page not found</p>
+    </div>
+    <!-- <Image
+      src={bg404}
+      alt="404"
+      class="w-full h-full object-cover object-center absolute"
+    /> -->
+  </div>
+</Layout>
+
+<style>
+  .main-404 {
+    /* background-image: url(`@/assets/images/404.jpg`); */
+    /* background-color: rgba(0, 0, 0, 0.28); */
+    background-image: url(../assets/images/bgnotfound.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+</style>

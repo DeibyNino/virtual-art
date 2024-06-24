@@ -1,0 +1,36 @@
+---
+import Card from "../Card.astro";
+import imagen1 from "@/assets/images/logo.png";
+import arte from "@/assets/images/arte.webp";
+import clases from "@/assets/images/clases.webp";
+import mural from "@/assets/images/mural.webp";
+---
+
+<div class="flex justify-center flex-col items-center w-full p-2">
+  <div class="my-8 text-center">
+    <h2 class="text-4xl font-bold text-gray-100">Nuestros servicios</h2>
+    <p class="text-lg text-gray-50">
+      Conoce algunos de los servicios que ofrecemos
+    </p>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 w-full max-w-screen-xl gap-8">
+    <Card
+      imagen={arte}
+      title="Creacion de arte"
+      body="Somos expertos en la creación de cuadros en diferentes técnicas y estilos"
+      href="/servicios"
+    />
+    <Card
+      imagen={mural}
+      title="Murales"
+      body="Transformamos espacios con murales artisticos y creativos"
+      href="/servicios"
+    />
+    <Card
+      imagen={clases}
+      title="Cursos de pintura"
+      body="Aprende a pintar con las mejores tecnicas y estilos de pintura"
+      href="/servicios"
+    />
+  </div>
+</div>

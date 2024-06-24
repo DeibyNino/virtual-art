@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Biografia">
+  <div class="flex flex-col items-center justify-center min-h-screen bg-white">
+    <div
+      class="w-full min-h-screen overflow-hidden z-10 grid grid-cols-1 lg:grid-cols-2"
+    >
+      <div class="relative h-[50vh] lg:h-auto">
+        <video
+          class="absolute w-full h-full object-cover object-center z-10"
+          autoplay
+          loop
+          src="/public/royvideo.mp4"
+        >
+        </video>
+        <div
+          class="absolute bg-blue-950 w-full h-full flex items-center justify-center bg-opacity-10 z-20"
+        >
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center lg:pt-32 pb-8">
+        <div class="flex flex-col p-8">
+          <h1 class="text-4xl font-bold">Quien es</h1>
+          <p class="text-7xl">Roy Marquez</p>
+          <p class="mt-4 w-2/3 text-lg font-bold">
+            Un amante del arte figurativo, explorandor de técnicas y estilos
+            únicos con pasión transformadora.
+          </p>
+          <p class="text-lg mt-4">
+            Mi trabajo artístico comienza desde los primeros años de infancia,
+            gracias a la influencia de mi padre pintor, escultor y mi madre
+            pintora, con lo cual puedo desarrollar las bases del dibujo y la
+            técnica del óleo, enfocándome en el arte figurativo, el dominio y el
+            manejo de otras técnicas como la acuarela, el acrílico y el
+            carboncillo, este proceso de aprendizaje empírico me ha llevado a
+            una profunda observación y comprensión de los resultados de la
+            pintura sobre lienzo, lo que me ha lleva- do a incursionar en la
+            búsqueda de un nuevo y propio estilo que se fusiona con el realismo,
+            el trazo preciso con texturas de lienzo sobre lienzo, grisallas y
+            mezclas de diluyentes como el aceite de linaza con el agua para
+            lograr efectos de pintura suspendida y transparencias, en resumen mi
+            trabajo es una constante búsqueda y transformación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div></Layout
+>
