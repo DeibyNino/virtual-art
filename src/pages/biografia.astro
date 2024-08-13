@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import videoRoy from "@/assets/video/royvideo.mp4";
 ---
 
 <Layout title="Biografia">
@@ -12,7 +13,7 @@ import Layout from "@/layouts/Layout.astro";
           class="absolute w-full h-full object-cover object-center z-10"
           autoplay
           loop
-          src="/public/royvideo.mp4"
+          src={videoRoy}
         >
         </video>
         <div

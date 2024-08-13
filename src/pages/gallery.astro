@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Galery from "../components/Gallery/Galery";
+import { galeryData } from "../assets/galeryData";
+---
+
+<Layout title="Galeria Virtual Art">
+  <main
+    class="flex flex-col items-center justify-center space-y-4 p-4 pt-32 bg-white"
+  >
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-blue-950">
+        Revisa algunas de nuestras obras de arte
+      </h1>
+      <p class="text-lg text-blue-950 font-semibold">
+        Pregunta por disponibilidad y precios
+      </p>
+
+      <a href="/" class="text-sky-500 py-2 rounded-lg mt-4">Volver al inicio</a>
+      >
+    </div>
+    <div class="">
+      <Galery client:load galeryData={galeryData} />
+    </div>
+  </main>
+</Layout>
