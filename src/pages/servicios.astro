@@ -1,9 +1,17 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import clases from "@/assets/images/clases.jpg";
+import mural from "@/assets/images/mural.webp";
+import arte from "@/assets/images/arte.webp";
+import venta from "@/assets/images/venta.jpg";
+import materiales from "@/assets/images/materiales.webp";
+
 
 const services = [
   {
     title: "Pintura de Murales",
+    type: "Mural",
     copy: "Transforma tus espacios con murales únicos y personalizados.",
     description:
       "Ofrecemos servicios de pintura mural para hogares, negocios y espacios públicos. Cada mural es diseñado para capturar la esencia del espacio y las preferencias del cliente, convirtiendo cualquier superficie en una obra de arte vibrante y significativa.",
@@ -11,6 +19,7 @@ const services = [
   },
   {
     title: "Pintura al Óleo sobre Lienzo",
+    type: "Arte",
     copy: "Obras al óleo sobre lienzo que capturan la belleza del realismo.",
     description:
       "Especializamos en la creación de pinturas al óleo sobre lienzo, utilizando técnicas tradicionales y modernas para lograr un realismo impresionante. Cada pieza es una manifestación de detalle, profundidad y emoción, perfecta para coleccionistas y amantes del arte.",
@@ -18,6 +27,7 @@ const services = [
   },
   {
     title: "Venta y Subastas de Arte",
+    type: "Venta",
     copy: "Adquiere obras de arte únicas y exclusivas a través de nuestras ventas y subastas.",
     description:
       "Participa en nuestras ventas y subastas de arte para obtener piezas únicas y exclusivas. Ofrecemos una amplia variedad de obras que reflejan diferentes estilos y técnicas, brindando a los compradores la oportunidad de poseer arte original y significativo.",
@@ -25,20 +35,23 @@ const services = [
   },
   {
     title: "Cursos de Pintura para Principiantes y Avanzados",
+    type: "Clases",
     copy: "Aprende y perfecciona tu arte con nuestros cursos de pintura para todos los niveles.",
     description:
       "Nuestros cursos de pintura están diseñados para artistas de todos los niveles, desde principiantes hasta avanzados. Aprenderás diversas técnicas, incluyendo óleo, acuarela, acrílico y carboncillo, en un ambiente inspirador y de apoyo. Desarrolla tu creatividad y mejora tus habilidades con la guía de un artista experimentado.",
-    image: "https://via.placeholder.com/600x400",
+    image: "@/assets/images/clases.jpg",
   },
-  {
-    title: "Eventos y Exposiciones de Arte",
-    copy: "Sumérgete en el mundo del arte a través de nuestros eventos y exposiciones.",
-    description:
-      "Organizamos eventos y exposiciones de arte que ofrecen una plataforma para mostrar y celebrar la creatividad. Estos eventos no solo exhiben nuestras obras, sino que también proporcionan un espacio para interactuar con otros entusiastas del arte y compartir la pasión por la creación artística.",
-    image: "https://via.placeholder.com/600x400",
-  },
+  // {
+  //   title: "Eventos y Exposiciones de Arte",
+  //   type: "Eventos",
+  //   copy: "Sumérgete en el mundo del arte a través de nuestros eventos y exposiciones.",
+  //   description:
+  //     "Organizamos eventos y exposiciones de arte que ofrecen una plataforma para mostrar y celebrar la creatividad. Estos eventos no solo exhiben nuestras obras, sino que también proporcionan un espacio para interactuar con otros entusiastas del arte y compartir la pasión por la creación artística.",
+  //   image: "https://via.placeholder.com/600x400",
+  // },
   {
     title: "Elaboración de Bastidores, Lienzos y Caballetes",
+    type: "Materiales",
     copy: "Materiales artísticos de alta calidad hechos a mano para artistas exigentes.",
     description:
       "Proveemos bastidores, lienzos y caballetes hechos a mano, utilizando materiales de la más alta calidad. Cada producto es diseñado para satisfacer las necesidades de artistas profesionales y aficionados, garantizando durabilidad y un rendimiento superior.",
@@ -76,12 +89,33 @@ const services = [
       {
         services.map((service) => (
           <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-            <div class="md:flex">
-              <img
+            <div class="md:flex h-auto md:h-96">
+              {/* <img
                 class="md:w-1/2 rounded-lg object-cover"
                 src={service.image}
                 alt={service.title}
+              /> */}
+              <Image
+                src={
+                  service.type === "Clases"
+                    ? clases
+                    : service.type === "Mural"
+                    ? mural
+                    : service.type === "Arte"
+                    ? arte
+                    : service.type === "Venta"
+                    ? venta:
+                    service.type === "Materiales"
+                    ? materiales :
+                    service.image
+                  
+                }
+                width={600}
+                height={400}
+                class="md:w-1/2 rounded-lg w-full  object-cover"
+                alt={service.title}
               />
+
               <div class="md:ml-6 md:w-1/2 flex flex-col">
                 <h2 class="text-2xl lg:text-4xl text-blue-950  font-bold mb-4">
                   {service.title}
@@ -89,8 +123,9 @@ const services = [
                 <p class="text-xl font-semibold  mb-4">{service.copy}</p>
                 <p>{service.description}</p>
                 <a
-                  href="/"
+                  href={`https://wa.me/573103821457?text=Hola!!%20quiero%20cotizar%20un%20servicio%20`}
                   class="w-full lg:w-40 text-center bg-blue-950 text-white py-2 px-6 rounded-lg  mt-6 "
+                  target="_blank"
                 >
                   Contactar
                 </a>
@@ -108,7 +143,7 @@ const services = [
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
+      document.querySelector(this?.getAttribute("href")).scrollIntoView({
         behavior: "smooth",
       });
     });
